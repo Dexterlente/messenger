@@ -1,4 +1,7 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Platform } from 'react-native';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 import { HelloWave } from 'components/HelloWave';
 import { ThemedText } from 'components/ThemedText';
@@ -6,12 +9,13 @@ import { ThemedView } from 'components/ThemedView';
 
 export default function HomeScreen() {
   return (
-    <>
-      <ThemedView style={styles.titleContainer}>
+     <SafeAreaView style={{ flex: 1, paddingHorizontal: 16,backgroundColor: '#ffffff' }}>
+      <ThemedView className="flex-row items-center pt-5 space-x-2 pt-5">
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+
+      <ThemedView className="mb-2 space-y-2">
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
@@ -26,13 +30,15 @@ export default function HomeScreen() {
           to open developer tools.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+
+      <ThemedView className="mb-2 space-y-2">
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
           Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+
+      <ThemedView className="mb-2 space-y-2">
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
           When you're ready, run{' '}
@@ -42,20 +48,6 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
-    </>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    paddingTop: 20,
-
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-});
