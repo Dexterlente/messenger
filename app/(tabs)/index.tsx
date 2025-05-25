@@ -13,6 +13,7 @@ export default function HomeScreen() {
       <ThemedView className="flex-row items-center pt-5 space-x-2 pt-5">
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
+        {/* TODO */}
       </ThemedView>
 
     </SafeAreaView>
