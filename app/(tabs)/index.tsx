@@ -11,7 +11,7 @@ export default function HomeScreen() {
      <SafeAreaView style={{ flex: 1, paddingHorizontal: 16,backgroundColor: '#ffffff' }}>
       <ThemedView className="flex-row items-center pt-5 space-x-2 pt-5">
         <ThemedText type="title">Welcome!</ThemedText>
-
+{/* TODO */}
       </ThemedView>
 
     </SafeAreaView>
