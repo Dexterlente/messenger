@@ -5,11 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
-import { useAxiosConversations } from 'hooks/useFetchConversations';
+import { useFetchConversations } from 'hooks/useFetchConversations';
 
 export default function HomeScreen() {
 
-   const { data, loading, error } = useAxiosConversations({
+   const { data, loading, error } = useFetchConversations({
     token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg1NDI0MzIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiIn0.ybkQr4G8bxWRgsQB8OFWusJsTIcwdL8HxO168ZX53PM',
   });
 

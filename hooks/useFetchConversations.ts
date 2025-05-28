@@ -5,7 +5,7 @@ interface UseAxiosOptions extends AxiosRequestConfig {
   token?: string;
 }
 
-export function useAxiosConversations<T = any>(options?: UseAxiosOptions) {
+export function useFetchConversations<T = any>(options?: UseAxiosOptions) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
