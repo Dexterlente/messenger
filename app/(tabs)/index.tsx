@@ -29,14 +29,13 @@ console.log('Data:', data);
           key={index}
           className="flex-row items-center bg-gray-100 rounded-xl p-3 mb-3"
         >
-          {/* Avatar Circle */}
+
           <ThemedView className="w-10 h-10 rounded-full bg-blue-600 items-center justify-center mr-3">
             <ThemedText type="defaultSemiBold" style={{ color: 'white' }}>
               {item.user_id.toString().slice(-2)}
             </ThemedText>
           </ThemedView>
 
-          {/* Conversation Content */}
           <ThemedView className="flex-1">
             <ThemedText type="defaultSemiBold">
               User {item.user_id}
