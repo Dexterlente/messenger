@@ -6,6 +6,7 @@ import { View, ScrollView } from 'react-native';
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
 import { useFetchConversations } from 'hooks/useFetchConversations';
+import MessageTime from 'components/utils/MessageTime';
 
 export default function HomeScreen() {
 
@@ -45,14 +46,10 @@ console.log('Data:', data);
               numberOfLines={1}
               className="text-gray-600"
             >
-              {item.last_message_content}
+              {item.last_message_content}{'\u00A0'}· 
+              <MessageTime isoDate={item.last_message_at} />
             </ThemedText>
-            <ThemedText
-              type="subtitle"
-              className="text-xs text-gray-400 mt-1"
-            >
-              {new Date(item.last_message_at).toLocaleString()}
-            </ThemedText>
+  
           </ThemedView>
         </ThemedView>
       ))
