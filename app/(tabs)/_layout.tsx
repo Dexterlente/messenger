@@ -31,6 +31,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={20} name="house.fill" color={color} />,
         }}
       />
+      {/* TODO */}
       {/* <Tabs.Screen
         name="liveprices"
         options={{
