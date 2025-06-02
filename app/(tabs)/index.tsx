@@ -10,7 +10,7 @@ import { useFetchConversations } from 'hooks/useFetchConversations';
 export default function HomeScreen() {
 
    const { data, loading, error } = useFetchConversations({
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg1NDI0MzIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiIn0.ybkQr4G8bxWRgsQB8OFWusJsTIcwdL8HxO168ZX53PM',
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg5NTk4NjUsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiIn0.FyA5eecourE4XunfzRw61dKO-TZDYgXA8PKQzuEGX7M',
   });
 
 console.log('Loading:', loading);
@@ -38,7 +38,7 @@ console.log('Data:', data);
 
           <ThemedView className="flex-1">
             <ThemedText type="defaultSemiBold">
-              User {item.user_id}
+              {item.first_name} {item.last_name}
             </ThemedText>
             <ThemedText
               type="default"
