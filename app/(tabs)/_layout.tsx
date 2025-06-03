@@ -31,21 +31,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={20} name="house.fill" color={color} />,
         }}
       />
-      {/* TODO */}
-      {/* <Tabs.Screen
-        name="liveprices"
-        options={{
-          title: 'Liveprices',
-          tabBarIcon: ({ color }) => <IconSymbol size={20} name="bitcoinsign.circle" color={color} />,
-        }}
-      /> */}
-      {/* <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={20} name="paperplane.fill" color={color} />,
-        }}
-      /> */}
     </Tabs>
   );
 }
