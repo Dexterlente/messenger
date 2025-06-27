@@ -6,6 +6,7 @@ import { Platform } from 'react-native';
 
 import { useColorScheme } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -26,9 +27,17 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen
         name="index"
+
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={20} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="explore"
+        options={{
+          title: 'Explore',
+          tabBarIcon: ({ color }) => <IconSymbol size={20} name="paperplane.fill" color={color} />,
         }}
       />
     </Tabs>
