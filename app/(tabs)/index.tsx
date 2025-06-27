@@ -8,10 +8,11 @@ import { ThemedView } from 'components/ThemedView';
 import { useFetchConversations } from 'hooks/useFetchConversations';
 import MessageTime from 'components/utils/MessageTime';
 
-export default function HomeScreen() {
 
+export default function HomeScreen() {
+  const jwt_token = process.env.EXPO_PUBLIC_JWT_TOKEN;
    const { data, loading, error } = useFetchConversations({
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDg5NTk4NjUsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiIn0.FyA5eecourE4XunfzRw61dKO-TZDYgXA8PKQzuEGX7M',
+    token: jwt_token,
   });
 
 console.log('Loading:', loading);
