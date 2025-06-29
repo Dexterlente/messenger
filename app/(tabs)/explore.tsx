@@ -7,7 +7,7 @@ import { View, FlatList, Text, Dimensions } from 'react-native';
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
 import { useFetchConversations } from 'hooks/useFetchConversations';
-import MessageTime from 'components/utils/MessageTime';
+import MessageTime, { MessageHourOnly } from 'components/utils/MessageTime';
 import { useFetchMessages } from 'hooks/useFetchMessages';
 
 interface JWTPayload {
@@ -42,14 +42,14 @@ const renderItem = ({ item }: { item: any }) => {
     return (
       <View
         className={`my-2 px-4 py-2 rounded-xl max-w-[80%] ${
-          isSender ? 'self-end bg-blue-500' : 'self-start bg-gray-300'
+          isSender ? 'self-end bg-green-600' : 'self-start bg-gray-300'
         }`}
       >
         <Text className={`${isSender ? 'text-white' : 'text-black'}`}>
           {item.Content}
         </Text>
         <Text className={`text-xs ${isSender ? 'text-white/80' : 'text-gray-600'}`}>
-          <MessageTime isoDate={item.SentAt} />
+          <MessageTime isoDate={item.SentAt} /> at <MessageHourOnly isoDate={item.SentAt} />
         </Text>
       </View>
     );

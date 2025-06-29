@@ -28,4 +28,11 @@ const MessageTime: React.FC<Props> = ({ isoDate }) => {
   return <Text>{displayTime}</Text>;
 };
 
+export const MessageHourOnly: React.FC<Props> = ({ isoDate }) => {
+  const date = parseISO(isoDate);
+  const timeOnly = format(date, 'hh:mm a'); // 02:46 PM
+
+  return <Text>{timeOnly}</Text>;
+};
+
 export default MessageTime;
