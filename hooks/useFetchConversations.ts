@@ -22,7 +22,7 @@ export function useFetchConversations<T = any>(options?: UseAxiosOptions) {
   const [error, setError] = useState<string | null>(null);
   const [hasNextPage, setHasNextPage] = useState<boolean>(true);
 
-  const API_URL = 'http://192.168.254.126:5000/conversations';
+  const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/conversations`;
 
   const fetchData = async (pageToFetch: number = 1) => {
     setLoading(true);
