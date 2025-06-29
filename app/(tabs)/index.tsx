@@ -1,12 +1,11 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FlatList, Image, Text, View } from 'react-native';
+import { FlatList, Image, Text, View, Dimensions } from 'react-native';
 
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
 import { useFetchConversations } from 'hooks/useFetchConversations';
 import MessageTime from 'components/utils/MessageTime';
 import NavBar from 'components/nav/Navbar';
-import { Dimensions } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
 const eightyPercentHeight = screenHeight * 0.7;
