@@ -1,8 +1,7 @@
-import { Platform } from 'react-native';
 import { jwtDecode } from 'jwt-decode';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, FlatList, Text, Dimensions, Image } from 'react-native';
+import { View, FlatList, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
@@ -10,6 +9,9 @@ import { useFetchConversations } from 'hooks/useFetchConversations';
 import MessageTime, { MessageHourOnly } from 'components/utils/MessageTime';
 import { useFetchMessages } from 'hooks/useFetchMessages';
 import { useFetchUserById } from 'hooks/useFetchUserById';
+import { useRouter } from 'expo-router';
+import { Feather } from '@expo/vector-icons';
+
 
 interface JWTPayload {
     user_id: number;
@@ -19,7 +21,7 @@ interface JWTPayload {
 }
 const screenHeight = Dimensions.get('window').height;
 const eightyPercentHeight = screenHeight * 0.8;
-
+const router = useRouter();
 export default function Explore() {
   const jwt_token = process.env.EXPO_PUBLIC_JWT_TOKEN;
   const decoded = jwt_token ? jwtDecode<JWTPayload>(jwt_token) : null;
@@ -74,6 +76,11 @@ const renderItem = ({ item }: { item: any }) => {
       )}
 
       <View className="flex-row items-center px-4 py-3 border-b border-gray-200 bg-white">
+
+        <TouchableOpacity onPress={() => router.back()} className="mr-3">
+          <Feather name="arrow-left" size={24} />
+        </TouchableOpacity>
+
       {imageUrl ? (
           <Image
             source={{ uri: imageUrl }}
