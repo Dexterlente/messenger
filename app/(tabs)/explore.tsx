@@ -69,7 +69,7 @@ const renderItem = ({ item }: { item: any }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, paddingHorizontal: 10, backgroundColor: '#ffffff' }}>
-      {error && (
+      {/* {error && (
         <Text className="text-red-500 text-center mt-4">
           {error}
         </Text>
@@ -120,7 +120,7 @@ const renderItem = ({ item }: { item: any }) => {
         onRefresh={refetch}
         bounces={true}
         alwaysBounceVertical={true}
-      />
+      /> */}
     </SafeAreaView>
   );
 }

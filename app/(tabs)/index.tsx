@@ -1,15 +1,17 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList, Image, Text, View, Dimensions } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 import { ThemedText } from 'components/ThemedText';
 import { ThemedView } from 'components/ThemedView';
 import { useFetchConversations } from 'hooks/useFetchConversations';
 import MessageTime from 'components/utils/MessageTime';
 import NavBar from 'components/nav/Navbar';
+import { useRouter } from 'expo-router';
 
 const screenHeight = Dimensions.get('window').height;
 const eightyPercentHeight = screenHeight * 0.7;
-
+const router = useRouter();
 export default function HomeScreen() {
   const jwt_token = process.env.EXPO_PUBLIC_JWT_TOKEN;
 
@@ -33,6 +35,10 @@ export default function HomeScreen() {
     const isLast = index === data.length - 1;
 
     return (
+       <TouchableOpacity
+      onPress={() => router.push(`/convo?receiver_id=${item.user_id}`)}
+      activeOpacity={0.8}
+    >
       <ThemedView
         key={index}
         className={`flex-row items-center bg-gray-100 py-2 ${
@@ -65,8 +71,10 @@ export default function HomeScreen() {
           </ThemedText>
         </ThemedView>
       </ThemedView>
+          </TouchableOpacity>
     );
   };
+
 
   return (
     <SafeAreaView style={{ flex: 1, paddingHorizontal: 10, backgroundColor: '#ffffff' }}>
