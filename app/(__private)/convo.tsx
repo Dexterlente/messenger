@@ -130,7 +130,7 @@ const renderItem = ({ item }: { item: any }) => {
             }}
           />
 
-
+{/* TODO */}
           <FlatList
               ref={flatListRef}
               inverted
