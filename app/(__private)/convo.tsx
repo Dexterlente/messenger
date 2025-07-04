@@ -129,7 +129,7 @@ const renderItem = ({ item }: { item: any }) => {
               elevation: 4, // Android
             }}
           />
-
+{/* TODO */}
           <FlatList
               ref={flatListRef}
               inverted
